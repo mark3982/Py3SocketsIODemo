@@ -1,14 +1,7 @@
 '''
-	scss - synchronous client and synchronous server
+	Asynchronous Callback Client With Synchronous Server
 	
-	This demonstrates a synchronous client and synchronous server. Because
-	the server is synchronous it can only handle one client at a time. It
-	is unable to work on multiple clients at the same time.	
-	
-	The client generates work message which are sent to the server. The
-	server performs a simple operation on the message to simulate something
-	that might happen in the real world. The result is sent back to the client
-	which then displays it to the screen.
+	see README.md
 '''
 import socket
 import threading
@@ -129,6 +122,8 @@ def ServerEntry(port):
 			
 	
 def main():
+	print('Asynchronous Callback Client With Synchronous Server')
+
 	port = 4534
 	c = threading.Thread(target = ClientEntry, args = (port, 5))
 	s = threading.Thread(target = ServerEntry, args = (port,))
